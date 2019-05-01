@@ -6,4 +6,4 @@
 
 use \Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Sodhub_CmsInstall', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Sodhub_CmsBlockInstall', __DIR__);
