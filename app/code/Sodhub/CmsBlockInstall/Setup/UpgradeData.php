@@ -160,6 +160,61 @@ class UpgradeData implements UpgradeDataInterface
            // $this->pageRepository->save($newPage);
         }
 
+        if (version_compare($context->getVersion(), '1.0.9', '<')) {
+
+            $cmsPageData = [
+                [
+
+                    'identifier' => 'home', // cms page url identifier
+
+                    'content' => "<p>CMS homepage content goes here!</p>                                    
+                                    <div id=\"owlslider\" class=\"owl-carousel owl-theme\">
+                                    <div class=\"item\">
+                                    <h4>1</h4>
+                                    </div>
+                                    <div class=\"item\">
+                                    <h4>2</h4>
+                                    </div>
+                                    <div class=\"item\">
+                                    <h4>3</h4>
+                                    </div>
+                                    <div class=\"item\">
+                                    <h4>4</h4>
+                                    </div>
+                                    <div class=\"item\">
+                                    <h4>5</h4>
+                                    </div>
+                                    <div class=\"item\">
+                                    <h4>6</h4>
+                                    </div>
+                                    <div class=\"item\">
+                                    <h4>7</h4>
+                                    </div>
+                                    <div class=\"item\">
+                                    <h4>8</h4>
+                                    </div>
+                                    <div class=\"item\">
+                                    <h4>9</h4>
+                                    </div>
+                                    <div class=\"item\">
+                                    <h4>10</h4>
+                                    </div>
+                                    <div class=\"item\">
+                                    <h4>11</h4>
+                                    </div>
+                                    <div class=\"item\">
+                                    <h4>12</h4>
+                                    </div>
+                                    </div>", // page content
+                    'is_active' => 1, // define active status
+                    'stores' => [0], // assign to stores
+                    'sort_order' => 0 // page sort order
+                ]
+            ];
+            $this->updatePages($cmsPageData);
+
+        }
+
 
         $setup->endSetup();
     }
